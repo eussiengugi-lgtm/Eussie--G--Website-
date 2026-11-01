@@ -1,286 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eussie G — travel, faith, inspiration, lifestyle and real-life experiences. G for Life.">
-<meta name="theme-color" content="#071426">
-<title>Eussie G | G for Life</title>
-<style>
-:root{--navy:#071426;--navy2:#102746;--gold:#d8b66a;--goldlight:#f0d99e;--cream:#f7f4ed;--muted:#c8d1df;--ink:#172438;--line:rgba(255,255,255,.14)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--navy);color:#fff;font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.wrap{width:min(1140px,92%);margin:auto}.topline{height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-header{position:sticky;top:0;z-index:20;background:rgba(7,20,38,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.14em}.brand img{width:48px;height:48px;object-fit:contain;border-radius:50%}.brand-name{font-size:1.12rem}.brand-name span{color:var(--gold)}.nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:.92rem}.nav-links a:hover{color:var(--goldlight)}.nav-cta{border:1px solid rgba(216,182,106,.7);padding:9px 17px;border-radius:999px;color:var(--goldlight)}.menu-toggle{display:none;border:1px solid var(--line);color:white;background:transparent;border-radius:10px;padding:9px 12px;font:inherit}
-.hero{position:relative;overflow:hidden;isolation:isolate;padding:104px 0 100px;background:radial-gradient(ellipse at 78% 20%,rgba(61,103,143,.42),transparent 38%),radial-gradient(ellipse at 10% 100%,rgba(216,182,106,.1),transparent 42%),linear-gradient(135deg,#071426,#102746 58%,#071426)}.hero:after{content:"";position:absolute;z-index:-1;width:min(520px,72vw);aspect-ratio:1;right:-90px;top:50%;transform:translateY(-50%);background:url("eussie-g-watermark.png") center/contain no-repeat;opacity:.075;filter:grayscale(1);pointer-events:none}.hero-inner{max-width:790px}.eyebrow{color:var(--goldlight);text-transform:uppercase;letter-spacing:.23em;font-size:.76rem;font-weight:800}h1{margin:20px 0 22px;font-size:clamp(3.1rem,8vw,6.4rem);line-height:.99;letter-spacing:-.055em}h1 span{color:var(--gold)}.hero-copy,.intro{color:var(--muted);font-size:1.08rem;max-width:680px}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}.btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 22px;border-radius:999px;border:1px solid var(--gold);font-weight:750;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-3px)}.btn-primary{background:var(--gold);color:#111c2b}.btn-outline{color:white;background:rgba(255,255,255,.03)}.hero-foot{display:flex;gap:18px;align-items:center;margin-top:54px;color:#aebbd0;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}.hero-foot:before{content:"";width:42px;height:1px;background:var(--gold)}
-section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.12;letter-spacing:-.035em}.gold-rule{width:58px;height:3px;margin:23px 0;background:var(--gold);border-radius:5px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}.card{position:relative;overflow:hidden;min-height:235px;padding:29px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(24,56,88,.94),rgba(10,27,48,.96));transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-6px);border-color:rgba(216,182,106,.65)}.card-number{color:var(--gold);font-size:.75rem;letter-spacing:.17em;font-weight:800}.card h3{margin:15px 0 9px;font-size:1.38rem}.card p{margin:0;color:var(--muted)}.card-mark{position:absolute;right:18px;bottom:5px;color:rgba(216,182,106,.09);font-size:5.5rem;line-height:1;font-weight:900}
-.gallery-section{background:#0a1b30}.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-auto-rows:220px;gap:16px;margin-top:38px}.gallery-card{position:relative;overflow:hidden;min-height:190px;border-radius:18px;border:1px solid rgba(216,182,106,.32);background:#102746}.gallery-card:first-child{grid-row:span 2}.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.gallery-card:hover img{transform:scale(1.055)}.gallery-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(3,13,25,.88));pointer-events:none}.gallery-caption{position:absolute;z-index:1;left:20px;right:20px;bottom:16px}.gallery-caption small{color:var(--goldlight);text-transform:uppercase;letter-spacing:.16em;font-size:.68rem;font-weight:800}.gallery-caption h3{margin:4px 0 0;font-size:1.2rem}.gallery-note{color:var(--muted);font-size:.82rem;margin-top:18px}
-.about{background:var(--cream);color:var(--ink)}.about .eyebrow{color:#92702e}.about .intro{color:#536174}.about-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}.about-copy{max-width:690px;font-size:1.08rem}.values{display:grid;grid-template-columns:1fr 1fr;gap:12px}.value{padding:18px;border:1px solid rgba(23,36,56,.13);border-radius:14px;background:rgba(255,255,255,.55)}.value strong{display:block;color:#92702e;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.value span{font-weight:750}
-.connect{background:linear-gradient(135deg,#102746,#071426)}.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.socials a{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:10px 18px;transition:.2s}.socials a:hover{border-color:var(--gold);color:var(--goldlight);transform:translateY(-2px)}.contact-note{margin-top:20px;max-width:720px;color:#aebbd0;font-size:.9rem}footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.footer-brand{color:var(--goldlight);font-weight:800;letter-spacing:.1em}:focus-visible{outline:2px solid var(--goldlight);outline-offset:4px}
-@media(max-width:760px){nav{min-height:70px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;top:70px;left:4%;right:4%;padding:18px;border:1px solid var(--line);border-radius:15px;background:#0b1d33;flex-direction:column;align-items:stretch;gap:16px}.nav-links.open{display:flex}.nav-cta{text-align:center}.hero{padding:76px 0 68px}.hero:after{right:-100px;opacity:.055}section{padding:65px 0}.grid{grid-template-columns:1fr}.card{min-height:190px}.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px}.gallery-card:first-child{grid-row:span 1;grid-column:span 2}.gallery-caption{left:13px;right:13px;bottom:11px}.gallery-caption h3{font-size:1rem}.about-layout{grid-template-columns:1fr;gap:28px}.hero-foot{margin-top:38px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
-/* Eussie G travel experiences */
-.travel-experiences{background:#071426}
-.travel-intro{max-width:760px}
-.destination-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-.destination{overflow:hidden;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:#102746}
-.destination img{width:100%;height:190px;object-fit:cover}
-.destination-copy{padding:20px}
-.destination-copy small{color:#f0d99e;text-transform:uppercase;letter-spacing:.15em;font-size:.68rem;font-weight:800}
-.destination-copy h3{margin:7px 0;font-size:1.25rem}
-.destination-copy p{margin:0;color:#c8d1df;font-size:.92rem}
-.travel-next{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
-.travel-panel{padding:25px;border:1px solid rgba(216,182,106,.45);border-radius:18px;background:linear-gradient(135deg,#142e4d,#0c1d33)}
-.travel-panel h3{margin:8px 0;font-size:1.35rem}
-.travel-panel p{margin:0;color:#c8d1df}
-.travel-panel .panel-tag{color:#f0d99e;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
-.coming-soon{display:inline-block;margin-top:16px;padding:7px 12px;border:1px solid rgba(216,182,106,.55);border-radius:999px;color:#f0d99e;font-size:.78rem;font-weight:700}
-@media(max-width:760px){.destination-grid{grid-template-columns:1fr}.destination img{height:205px}.travel-next{grid-template-columns:1fr}}
+/* EUSSIE G HOLIDAY PACKAGES */
 
-
-/* Holiday enquiry form */
-.enquiry-section{background:#f7f4ed;color:#172438}
-.enquiry-section .eyebrow{color:#92702e}
-.enquiry-section .intro{color:#536174}
-.enquiry-layout{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;margin-top:30px}
-.enquiry-form{padding:25px;border:1px solid rgba(23,36,56,.14);border-radius:18px;background:#fff;box-shadow:0 16px 45px rgba(10,25,45,.08)}
-.enquiry-form label{display:block;margin:0 0 6px;font-size:.88rem;font-weight:750}
-.enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;margin:0 0 16px;padding:12px 13px;border:1px solid #cbd2dc;border-radius:10px;background:#fff;color:#172438;font:inherit}
-.enquiry-form textarea{min-height:100px;resize:vertical}
-.enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid #d8b66a;outline-offset:1px}
-.enquiry-actions{display:flex;flex-wrap:wrap;gap:10px}
-.enquiry-actions button{cursor:pointer;font:inherit}
-.contact-options{padding:25px;border-radius:18px;background:#102746;color:#fff}
-.contact-options p{color:#c8d1df}
-.contact-link{display:block;margin-top:12px;padding:13px 16px;border:1px solid rgba(216,182,106,.6);border-radius:12px;color:#f0d99e;overflow-wrap:anywhere}
-.enquiry-disclaimer{font-size:.82rem;color:#647184;margin-top:14px}
-@media(max-width:760px){.enquiry-layout{grid-template-columns:1fr}.enquiry-form{padding:19px}}
-
-
-/* Eussie G holiday package collections */
-.package-section{background:#0a1b30}
-.package-intro{max-width:780px}
-.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-.package-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:linear-gradient(160deg,#142e4d,#0c1d33)}
-.package-card img{width:100%;height:180px;object-fit:cover}
-.package-card-body{display:flex;flex:1;flex-direction:column;padding:21px}
-.package-card .package-tag{color:#f0d99e;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;font-weight:800}
-.package-card h3{margin:8px 0;font-size:1.35rem}
-.package-card p{margin:0;color:#c8d1df;font-size:.92rem}
-.package-list{margin:15px 0 20px;padding-left:19px;color:#dce3ed;font-size:.9rem}
-.package-list li{margin:5px 0}
-.package-card .btn{align-self:flex-start;margin-top:auto}
-.package-note{margin:24px 0 0;color:#c8d1df;font-size:.85rem}
-@media(max-width:900px){.package-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.package-grid{grid-template-columns:1fr}.package-card img{height:205px}}
-
-</style>
-</head>
-<body>
-<div class="topline" aria-hidden="true"></div>
-<header><nav class="wrap" aria-label="Main navigation">
-<a class="brand" href="#home" aria-label="Eussie G home"><img src="eussie-g-watermark.png" alt="Eussie G watermark logo"><span class="brand-name">EUSSIE <span>G</span></span></a>
-<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-<div class="nav-links" id="nav-links"><a href="#about">About</a><a href="#discover">Discover</a><a href="#gallery">Gallery</a><a href="#experiences">Travel</a><a href="#enquire">Enquire</a><a href="#connect">Connect</a><a class="nav-cta" href="#discover">Explore the journey</a></div>
-</nav></header>
-<main>
-<section class="hero" id="home"><div class="wrap"><div class="hero-inner"><div class="eyebrow">A little inspiration for the journey</div><h1>Live with purpose.<br><span>Explore with wonder.</span></h1><p class="hero-copy">Welcome to Eussie G — a space for travel, faith, inspiration, lifestyle and real-life experiences. Discover stories that encourage you to grow, appreciate life and see the world with fresh eyes.</p><div class="actions"><a class="btn btn-primary" href="#discover">Explore Eussie G</a><a class="btn btn-outline" href="https://www.youtube.com/@eussiengugi" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div><div class="hero-foot">G for Life · Grace · Growth · Gratitude</div></div></div></section>
-<section id="discover"><div class="wrap"><div class="section-head"><div class="eyebrow">Discover the journey</div><h2>Stories that inspire life</h2><div class="gold-rule"></div><p class="intro">A meeting place for meaningful moments, new destinations and positive ideas. Find something that speaks to your curiosity, your faith and your everyday life.</p></div><div class="grid">
-<article class="card"><div class="card-number">01 / EXPLORE</div><h3>Travel &amp; Tours</h3><p>Destinations, places, cultures and memorable experiences from Kenya and around the world.</p><span class="card-mark">01</span></article>
-<article class="card"><div class="card-number">02 / BELIEVE</div><h3>Faith &amp; Inspiration</h3><p>Encouraging reflections, hope and messages rooted in faith, purpose and gratitude.</p><span class="card-mark">02</span></article>
-<article class="card"><div class="card-number">03 / LIVE</div><h3>Lifestyle &amp; Real Life</h3><p>Everyday experiences, personal growth, motivation and lessons worth sharing.</p><span class="card-mark">03</span></article>
-</div></div></section>
-<section class="gallery-section" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">Featured destinations</div><h2>See the world with wonder</h2><div class="gold-rule"></div><p class="intro">A little inspiration for your next adventure — from Kenya's beautiful coast and wild spaces to iconic places around the world.</p></div>
-<div class="gallery-grid">
-<article class="gallery-card"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Tropical beach and turquoise sea" loading="lazy"><div class="gallery-caption"><small>Coastal escapes</small><h3>Blue horizons</h3></div></article>
-<article class="gallery-card"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="African wildlife safari landscape" loading="lazy"><div class="gallery-caption"><small>Wild Africa</small><h3>Safari moments</h3></div></article>
-<article class="gallery-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Scenic mountain landscape" loading="lazy"><div class="gallery-caption"><small>Nature &amp; discovery</small><h3>Beyond the horizon</h3></div></article>
-<article class="gallery-card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Mountain beneath a starry night sky" loading="lazy"><div class="gallery-caption"><small>Unforgettable views</small><h3>Moments to remember</h3></div></article>
-<article class="gallery-card"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Scenic travel landscape" loading="lazy"><div class="gallery-caption"><small>Go explore</small><h3>Take the scenic route</h3></div></article>
-</div><p class="gallery-note">These are illustrative featured photographs, not personal travel claims. Your own Eussie G travel photos can be added whenever you're ready.</p></div></section>
-
-<section class="travel-experiences" id="experiences">
-  <div class="wrap">
-    <div class="section-head travel-intro">
-      <div class="eyebrow">Your next journey starts here</div>
-      <h2>Explore with Eussie G</h2>
-      <div class="gold-rule"></div>
-      <p class="intro">From Kenya's coast and wild landscapes to memorable journeys farther afield, discover travel inspiration today — with holiday experiences and booking enquiries planned for the future.</p>
-    </div>
-    <div class="destination-grid">
-      <article class="destination">
-        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Turquoise sea and tropical beach" loading="lazy">
-        <div class="destination-copy"><small>Kenya · Coast</small><h3>Diani &amp; the South Coast</h3><p>Beach escapes, ocean views and time to unwind along Kenya's coast.</p></div>
-      </article>
-      <article class="destination">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="African safari landscape" loading="lazy">
-        <div class="destination-copy"><small>Kenya · Wildlife</small><h3>Maasai Mara</h3><p>Discover wide-open savannahs, wildlife and the spirit of safari.</p></div>
-      </article>
-      <article class="destination">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Scenic mountain travel landscape" loading="lazy">
-        <div class="destination-copy"><small>Beyond Kenya</small><h3>Global discoveries</h3><p>Find ideas for future adventures, new cultures and remarkable places.</p></div>
-      </article>
-    </div>
-    <div class="travel-next">
-      <article class="travel-panel"><div class="panel-tag">Coming in a future phase</div><h3>Holiday tours &amp; bookings</h3><p>We’re planning a way for visitors to enquire about holiday packages and travel arrangements. Booking details will be added when the service is ready.</p><span class="coming-soon">Bookings launching soon</span></article>
-      <article class="travel-panel"><div class="panel-tag">Read · Watch · Get inspired</div><h3>Travel stories &amp; guides</h3><p>Follow destination stories, practical inspiration and real experiences from the Eussie G journey.</p><a class="btn btn-outline" href="#gallery" style="margin-top:16px">Browse travel inspiration</a></article>
-    </div>
-  </div>
-</section>
-
-
-<section class="package-section" id="holiday-packages">
-  <div class="wrap">
-    <div class="section-head package-intro">
-      <div class="eyebrow">Discover · Plan · Explore</div>
-      <h2>Holiday ideas with Eussie G</h2>
-      <div class="gold-rule"></div>
-      <p class="intro">Explore three ways to start planning your next trip. These are destination ideas, not fixed or confirmed packages. Tell us what interests you and we can discuss dates, availability and a tailored quotation.</p>
-    </div>
-    <div class="package-grid">
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Sunny tropical beach on the Kenyan coast" loading="lazy">
-        <div class="package-card-body">
-          <div class="package-tag">01 · Kenya</div>
-          <h3>Kenya Getaways</h3>
-          <p>Coastal breaks, wildlife experiences and scenic escapes closer to home.</p>
-          <ul class="package-list">
-            <li>Diani &amp; the South Coast</li>
-            <li>Mombasa and Watamu</li>
-            <li>Maasai Mara safari ideas</li>
-            <li>Amboseli and Nairobi escapes</li>
-          </ul>
-          <a class="btn btn-primary package-enquire" href="#enquire" data-destination="Diani &amp; the South Coast">Enquire about Kenya ↗</a>
-        </div>
-      </article>
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Clear blue ocean and island coastline" loading="lazy">
-        <div class="package-card-body">
-          <div class="package-tag">02 · Africa</div>
-          <h3>African Adventures</h3>
-          <p>Discover island time, nature, culture and memorable journeys around Africa.</p>
-          <ul class="package-list">
-            <li>Zanzibar island escapes</li>
-            <li>Tanzania and safari ideas</li>
-            <li>Uganda nature experiences</li>
-            <li>Other African destinations on request</li>
-          </ul>
-          <a class="btn btn-primary package-enquire" href="#enquire" data-destination="Zanzibar / Tanzania / other Africa">Enquire about Africa ↗</a>
-        </div>
-      </article>
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Travel suitcase ready for an international journey" loading="lazy">
-        <div class="package-card-body">
-          <div class="package-tag">03 · Worldwide</div>
-          <h3>International Holidays</h3>
-          <p>Share the places on your wish list and start exploring possible options.</p>
-          <ul class="package-list">
-            <li>City breaks and cultural trips</li>
-            <li>Family and group holidays</li>
-            <li>Relaxing beach destinations</li>
-            <li>Custom travel ideas worldwide</li>
-          </ul>
-          <a class="btn btn-primary package-enquire" href="#enquire" data-destination="International destination">Enquire about international travel ↗</a>
-        </div>
-      </article>
-    </div>
-    <p class="package-note">Prices, inclusions, transport, accommodation and availability are confirmed individually after an enquiry. No package is booked or guaranteed by submitting this form.</p>
-  </div>
-</section>
-
-<section class="about" id="about"><div class="wrap about-layout"><div><div class="eyebrow">The meaning behind the name</div><h2>G for Life</h2><div class="gold-rule"></div><p class="intro">God’s Glory · Grace · Global · Gratitude · Growth</p><p class="about-copy">Eussie G brings together a positive outlook on life: celebrating God’s grace, appreciating every journey, learning from real experiences and inspiring people across borders. Thank you for being part of the journey.</p></div><div class="values" aria-label="Eussie G values"><div class="value"><strong>01</strong><span>God’s Glory</span></div><div class="value"><strong>02</strong><span>Grace</span></div><div class="value"><strong>03</strong><span>Global</span></div><div class="value"><strong>04</strong><span>Gratitude</span></div><div class="value"><strong>05</strong><span>Growth</span></div><div class="value"><strong>06</strong><span>Good living</span></div></div></div></section>
-
-<section class="enquiry-section" id="enquire">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Your journey, your way</div>
-      <h2>Make a holiday enquiry</h2>
-      <div class="gold-rule"></div>
-      <p class="intro">Tell us a little about the trip you're considering. Send your enquiry to Eussie G by WhatsApp or email and we'll get back to you about possible options.</p>
-    </div>
-    <div class="enquiry-layout">
-      <form class="enquiry-form" id="holiday-enquiry">
-        <label for="enq-name">Your name</label>
-        <input id="enq-name" name="name" autocomplete="name" required placeholder="Enter your name">
-        <label for="enq-destination">Destination of interest</label>
-        <select id="enq-destination" name="destination" required>
-          <option value="">Choose a destination</option>
-          <option>Diani &amp; the South Coast</option>
-          <option>Mombasa</option>
-          <option>Watamu</option>
-          <option>Zanzibar / Tanzania / other Africa</option>
-          <option>Maasai Mara</option>
-          <option>Nairobi &amp; nearby experiences</option>
-          <option>International destination</option>
-          <option>Not sure yet — please advise</option>
-        </select>
-        <label for="enq-dates">Preferred travel dates</label>
-        <input id="enq-dates" name="dates" placeholder="e.g. 10–15 August (or flexible)">
-        <label for="enq-guests">Number of travellers</label>
-        <select id="enq-guests" name="guests" required>
-          <option value="">Select number of travellers</option>
-          <option>1</option><option>2</option><option>3–4</option><option>5–8</option><option>9 or more</option>
-        </select>
-        <label for="enq-notes">Anything else we should know? (optional)</label>
-        <textarea id="enq-notes" name="notes" placeholder="Your ideas, preferred package or questions"></textarea>
-        <div class="enquiry-actions">
-          <button class="btn btn-primary" type="button" id="send-whatsapp">Send via WhatsApp ↗</button>
-          <button class="btn btn-outline" style="color:#172438;border-color:#92702e" type="button" id="send-email">Send via email ↗</button>
-        </div>
-        <p class="enquiry-disclaimer">This form prepares a message in your chosen app. It does not make a reservation, confirm availability or take payment. Your message is sent only when you press Send in WhatsApp or your email app.</p>
-      </form>
-      <aside class="contact-options">
-        <div class="eyebrow">Talk to Eussie G</div>
-        <h3>Let's start planning</h3>
-        <p>Have a question before filling in the form? Contact us directly using either option.</p>
-        <a class="contact-link" href="https://wa.me/254720421841" target="_blank" rel="noopener noreferrer">WhatsApp: +254 720 421 841 ↗</a>
-        <a class="contact-link" href="mailto:eussiengugi@gmail.com">Email: eussiengugi@gmail.com ↗</a>
-        <p class="enquiry-disclaimer" style="color:#c8d1df">Holiday packages and booking arrangements are subject to confirmation by Eussie G.</p>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<section class="connect" id="connect"><div class="wrap"><div class="eyebrow">Stay connected</div><h2>Follow the Eussie G journey</h2><div class="gold-rule"></div><p class="intro">Find videos, updates and new stories on the platforms below. Come along, share the journey and be inspired.</p><div class="socials"><a href="https://www.youtube.com/@eussiengugi" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://www.tiktok.com/@eussieg" target="_blank" rel="noopener noreferrer">TikTok ↗</a></div><p class="contact-note">Instagram, Facebook, email and WhatsApp links can be added when the official details are ready.</p></div></section>
-</main>
-<footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> Eussie G. All rights reserved.</span><span class="footer-brand">G FOR LIFE</span><span>God’s Glory · Grace · Global · Gratitude · Growth</span></div></footer>
-<script>
-const menuButton=document.querySelector('.menu-toggle');const navLinks=document.querySelector('.nav-links');
-menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
-navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));
-document.getElementById('year').textContent=new Date().getFullYear();
-
-const enquiryForm=document.getElementById('holiday-enquiry');
-
-const destinationSelect=document.getElementById('enq-destination');
-document.querySelectorAll('.package-enquire').forEach(link=>{
-  link.addEventListener('click',()=>{
-    const requested=link.dataset.destination;
-    if(requested && destinationSelect){
-      const matching=[...destinationSelect.options].find(option=>option.text===requested);
-      if(matching) destinationSelect.value=matching.value;
-      else destinationSelect.value='International destination';
-    }
-  });
-});
-
-function getEnquiryMessage(){
-  const data=new FormData(enquiryForm);
-  const name=(data.get('name')||'').trim();
-  const destination=data.get('destination')||'';
-  const dates=(data.get('dates')||'').trim()||'Flexible';
-  const guests=data.get('guests')||'';
-  const notes=(data.get('notes')||'').trim()||'None';
-  return `Hello Eussie G, I would like to make a holiday enquiry.\nName: ${name}\nDestination: ${destination}\nPreferred dates: ${dates}\nTravellers: ${guests}\nAdditional details: ${notes}\n\nI understand this is an enquiry, not a confirmed booking.`;
+.holiday-packages {
+  background: #071426;
+  color: #fff;
+  padding: 85px 0;
 }
-document.getElementById('send-whatsapp').addEventListener('click',()=>{
-  if(!enquiryForm.reportValidity()) return;
-  window.open('https://wa.me/254720421841?text='+encodeURIComponent(getEnquiryMessage()),'_blank','noopener');
-});
-document.getElementById('send-email').addEventListener('click',()=>{
-  if(!enquiryForm.reportValidity()) return;
-  const subject=encodeURIComponent('Eussie G holiday enquiry');
-  window.location.href='mailto:eussiengugi@gmail.com?subject='+subject+'&body='+encodeURIComponent(getEnquiryMessage());
-});
 
-</script>
-</body></html>
+.holiday-intro {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.holiday-intro p {
+  color: #c8d1df;
+  font-size: 1.08rem;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.package-card {
+  background: #102746;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.package-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.package-content {
+  padding: 24px;
+}
+
+.package-label {
+  color: #d8b66a;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.package-content h3 {
+  font-size: 1.45rem;
+  margin: 12px 0;
+}
+
+.package-content p {
+  color: #c8d1df;
+}
+
+.package-price {
+  color: #f0d99e;
+  font-weight: 700;
+  margin: 18px 0;
+}
+
+.package-button {
+  display: inline-block;
+  background: #d8b66a;
+  color: #172438 !important;
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.package-button:hover {
+  background: #f0d99e;
+}
+
+@media(max-width:760px) {
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+}
