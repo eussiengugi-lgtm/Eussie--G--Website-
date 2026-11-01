@@ -36,6 +36,25 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
 .coming-soon{display:inline-block;margin-top:16px;padding:7px 12px;border:1px solid rgba(216,182,106,.55);border-radius:999px;color:#f0d99e;font-size:.78rem;font-weight:700}
 @media(max-width:760px){.destination-grid{grid-template-columns:1fr}.destination img{height:205px}.travel-next{grid-template-columns:1fr}}
 
+
+/* Holiday enquiry form */
+.enquiry-section{background:#f7f4ed;color:#172438}
+.enquiry-section .eyebrow{color:#92702e}
+.enquiry-section .intro{color:#536174}
+.enquiry-layout{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;margin-top:30px}
+.enquiry-form{padding:25px;border:1px solid rgba(23,36,56,.14);border-radius:18px;background:#fff;box-shadow:0 16px 45px rgba(10,25,45,.08)}
+.enquiry-form label{display:block;margin:0 0 6px;font-size:.88rem;font-weight:750}
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;margin:0 0 16px;padding:12px 13px;border:1px solid #cbd2dc;border-radius:10px;background:#fff;color:#172438;font:inherit}
+.enquiry-form textarea{min-height:100px;resize:vertical}
+.enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid #d8b66a;outline-offset:1px}
+.enquiry-actions{display:flex;flex-wrap:wrap;gap:10px}
+.enquiry-actions button{cursor:pointer;font:inherit}
+.contact-options{padding:25px;border-radius:18px;background:#102746;color:#fff}
+.contact-options p{color:#c8d1df}
+.contact-link{display:block;margin-top:12px;padding:13px 16px;border:1px solid rgba(216,182,106,.6);border-radius:12px;color:#f0d99e;overflow-wrap:anywhere}
+.enquiry-disclaimer{font-size:.82rem;color:#647184;margin-top:14px}
+@media(max-width:760px){.enquiry-layout{grid-template-columns:1fr}.enquiry-form{padding:19px}}
+
 </style>
 </head>
 <body>
@@ -43,7 +62,7 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
 <header><nav class="wrap" aria-label="Main navigation">
 <a class="brand" href="#home" aria-label="Eussie G home"><img src="eussie-g-watermark.png" alt="Eussie G watermark logo"><span class="brand-name">EUSSIE <span>G</span></span></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-<div class="nav-links" id="nav-links"><a href="#about">About</a><a href="#discover">Discover</a><a href="#gallery">Gallery</a><a href="#experiences">Travel</a><a href="#connect">Connect</a><a class="nav-cta" href="#discover">Explore the journey</a></div>
+<div class="nav-links" id="nav-links"><a href="#about">About</a><a href="#discover">Discover</a><a href="#gallery">Gallery</a><a href="#experiences">Travel</a><a href="#enquire">Enquire</a><a href="#connect">Connect</a><a class="nav-cta" href="#discover">Explore the journey</a></div>
 </nav></header>
 <main>
 <section class="hero" id="home"><div class="wrap"><div class="hero-inner"><div class="eyebrow">A little inspiration for the journey</div><h1>Live with purpose.<br><span>Explore with wonder.</span></h1><p class="hero-copy">Welcome to Eussie G — a space for travel, faith, inspiration, lifestyle and real-life experiences. Discover stories that encourage you to grow, appreciate life and see the world with fresh eyes.</p><div class="actions"><a class="btn btn-primary" href="#discover">Explore Eussie G</a><a class="btn btn-outline" href="https://www.youtube.com/@eussiengugi" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div><div class="hero-foot">G for Life · Grace · Growth · Gratitude</div></div></div></section>
@@ -91,6 +110,56 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
 </section>
 
 <section class="about" id="about"><div class="wrap about-layout"><div><div class="eyebrow">The meaning behind the name</div><h2>G for Life</h2><div class="gold-rule"></div><p class="intro">God’s Glory · Grace · Global · Gratitude · Growth</p><p class="about-copy">Eussie G brings together a positive outlook on life: celebrating God’s grace, appreciating every journey, learning from real experiences and inspiring people across borders. Thank you for being part of the journey.</p></div><div class="values" aria-label="Eussie G values"><div class="value"><strong>01</strong><span>God’s Glory</span></div><div class="value"><strong>02</strong><span>Grace</span></div><div class="value"><strong>03</strong><span>Global</span></div><div class="value"><strong>04</strong><span>Gratitude</span></div><div class="value"><strong>05</strong><span>Growth</span></div><div class="value"><strong>06</strong><span>Good living</span></div></div></div></section>
+
+<section class="enquiry-section" id="enquire">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Your journey, your way</div>
+      <h2>Make a holiday enquiry</h2>
+      <div class="gold-rule"></div>
+      <p class="intro">Tell us a little about the trip you're considering. Send your enquiry to Eussie G by WhatsApp or email and we'll get back to you about possible options.</p>
+    </div>
+    <div class="enquiry-layout">
+      <form class="enquiry-form" id="holiday-enquiry">
+        <label for="enq-name">Your name</label>
+        <input id="enq-name" name="name" autocomplete="name" required placeholder="Enter your name">
+        <label for="enq-destination">Destination of interest</label>
+        <select id="enq-destination" name="destination" required>
+          <option value="">Choose a destination</option>
+          <option>Diani &amp; the South Coast</option>
+          <option>Mombasa</option>
+          <option>Maasai Mara</option>
+          <option>Nairobi &amp; nearby experiences</option>
+          <option>International destination</option>
+          <option>Not sure yet — please advise</option>
+        </select>
+        <label for="enq-dates">Preferred travel dates</label>
+        <input id="enq-dates" name="dates" placeholder="e.g. 10–15 August (or flexible)">
+        <label for="enq-guests">Number of travellers</label>
+        <select id="enq-guests" name="guests" required>
+          <option value="">Select number of travellers</option>
+          <option>1</option><option>2</option><option>3–4</option><option>5–8</option><option>9 or more</option>
+        </select>
+        <label for="enq-notes">Anything else we should know? (optional)</label>
+        <textarea id="enq-notes" name="notes" placeholder="Your ideas, preferred package or questions"></textarea>
+        <div class="enquiry-actions">
+          <button class="btn btn-primary" type="button" id="send-whatsapp">Send via WhatsApp ↗</button>
+          <button class="btn btn-outline" style="color:#172438;border-color:#92702e" type="button" id="send-email">Send via email ↗</button>
+        </div>
+        <p class="enquiry-disclaimer">This form prepares a message in your chosen app. It does not make a reservation, confirm availability or take payment. Your message is sent only when you press Send in WhatsApp or your email app.</p>
+      </form>
+      <aside class="contact-options">
+        <div class="eyebrow">Talk to Eussie G</div>
+        <h3>Let's start planning</h3>
+        <p>Have a question before filling in the form? Contact us directly using either option.</p>
+        <a class="contact-link" href="https://wa.me/254720421841" target="_blank" rel="noopener noreferrer">WhatsApp: +254 720 421 841 ↗</a>
+        <a class="contact-link" href="mailto:eussiengugi@gmail.com">Email: eussiengugi@gmail.com ↗</a>
+        <p class="enquiry-disclaimer" style="color:#c8d1df">Holiday packages and booking arrangements are subject to confirmation by Eussie G.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <section class="connect" id="connect"><div class="wrap"><div class="eyebrow">Stay connected</div><h2>Follow the Eussie G journey</h2><div class="gold-rule"></div><p class="intro">Find videos, updates and new stories on the platforms below. Come along, share the journey and be inspired.</p><div class="socials"><a href="https://www.youtube.com/@eussiengugi" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://www.tiktok.com/@eussieg" target="_blank" rel="noopener noreferrer">TikTok ↗</a></div><p class="contact-note">Instagram, Facebook, email and WhatsApp links can be added when the official details are ready.</p></div></section>
 </main>
 <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> Eussie G. All rights reserved.</span><span class="footer-brand">G FOR LIFE</span><span>God’s Glory · Grace · Global · Gratitude · Growth</span></div></footer>
@@ -99,5 +168,26 @@ const menuButton=document.querySelector('.menu-toggle');const navLinks=document.
 menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
 navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));
 document.getElementById('year').textContent=new Date().getFullYear();
+
+const enquiryForm=document.getElementById('holiday-enquiry');
+function getEnquiryMessage(){
+  const data=new FormData(enquiryForm);
+  const name=(data.get('name')||'').trim();
+  const destination=data.get('destination')||'';
+  const dates=(data.get('dates')||'').trim()||'Flexible';
+  const guests=data.get('guests')||'';
+  const notes=(data.get('notes')||'').trim()||'None';
+  return `Hello Eussie G, I would like to make a holiday enquiry.\nName: ${name}\nDestination: ${destination}\nPreferred dates: ${dates}\nTravellers: ${guests}\nAdditional details: ${notes}\n\nI understand this is an enquiry, not a confirmed booking.`;
+}
+document.getElementById('send-whatsapp').addEventListener('click',()=>{
+  if(!enquiryForm.reportValidity()) return;
+  window.open('https://wa.me/254720421841?text='+encodeURIComponent(getEnquiryMessage()),'_blank','noopener');
+});
+document.getElementById('send-email').addEventListener('click',()=>{
+  if(!enquiryForm.reportValidity()) return;
+  const subject=encodeURIComponent('Eussie G holiday enquiry');
+  window.location.href='mailto:eussiengugi@gmail.com?subject='+subject+'&body='+encodeURIComponent(getEnquiryMessage());
+});
+
 </script>
 </body></html>
