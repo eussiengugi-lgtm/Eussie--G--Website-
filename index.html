@@ -1,114 +1,203 @@
-
-<section class="holiday-packages" id="packages">
-  <div class="wrap">
-
-    <div class="holiday-intro">
-      <small class="package-label">TRAVEL YOUR WAY</small>
-      <h2>Discover Your Eussie G Holiday</h2>
-      <p>
-        From affordable escapes to luxurious experiences,
-        discover a holiday that suits your dreams and budget.
-      </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover thoughtfully selected beach holidays and safari escapes with Eussie G. Explore Diani, Maasai Mara and Amboseli.">
+  <meta name="theme-color" content="#102a2a">
+  <title>Eussie G | Travel Your Way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #172b2a;
+      --deep: #102a2a;
+      --cream: #f8f5ee;
+      --paper: #fffdf8;
+      --gold: #c6a66b;
+      --muted: #697573;
+      --line: #e7e1d5;
+      --shadow: 0 18px 50px rgba(20, 39, 36, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; line-height: 1.6; }
+    a { color: inherit; }
+    .topbar { background: var(--deep); color: #f7f1e5; text-align: center; padding: 9px 16px; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,253,248,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav-wrap { max-width: 1160px; margin: auto; padding: 17px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { text-decoration: none; display: flex; align-items: center; gap: 11px; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--gold); color: var(--gold); border-radius: 50%; font-family: "Playfair Display", serif; font-size: 1.1rem; }
+    .brand-name { display: block; font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.3rem; line-height: 1.1; letter-spacing: .02em; }
+    .brand-tag { display: block; margin-top: 4px; color: var(--muted); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { text-decoration: none; font-size: .9rem; font-weight: 600; }
+    nav a:hover { color: #987746; }
+    .nav-cta, .button { display: inline-flex; justify-content: center; align-items: center; border-radius: 4px; padding: 12px 19px; background: var(--gold); color: #182b28; text-decoration: none; font-weight: 700; font-size: .88rem; transition: transform .2s, background .2s; }
+    .nav-cta:hover, .button:hover { background: #d5b981; transform: translateY(-2px); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; border-radius: 4px; padding: 8px 11px; color: var(--ink); font-size: 1.2rem; }
+    .hero { min-height: 590px; display: flex; align-items: center; position: relative; color: white; background: linear-gradient(90deg, rgba(8,30,30,.76), rgba(8,30,30,.18)), url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2000") center/cover; }
+    .hero-inner { width: min(1160px, 100%); margin: auto; padding: 90px 24px 100px; }
+    .eyebrow { color: var(--gold); font-size: .75rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; line-height: 1.15; }
+    h1 { max-width: 680px; margin: 18px 0; font-size: clamp(2.7rem, 7vw, 5.2rem); }
+    .hero p { max-width: 560px; color: rgba(255,255,255,.88); font-size: 1.05rem; }
+    .hero .button { margin-top: 18px; }
+    .intro { max-width: 760px; margin: 0 auto 42px; text-align: center; }
+    .section { padding: 88px 24px; }
+    .section.soft { background: var(--cream); }
+    .container { max-width: 1160px; margin: auto; }
+    h2 { margin: 12px 0 14px; font-size: clamp(2rem, 4vw, 3.2rem); }
+    .intro p { color: var(--muted); margin: 0 auto; max-width: 650px; }
+    .package-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; }
+    .package-card { overflow: hidden; background: white; border: 1px solid var(--line); box-shadow: 0 8px 28px rgba(20,39,36,.05); transition: transform .25s, box-shadow .25s; }
+    .package-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .package-card img { display: block; width: 100%; height: 235px; object-fit: cover; }
+    .package-content { padding: 23px 23px 25px; }
+    .package-label { color: #9b7b48; font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .package-content h3 { margin: 10px 0; font-size: 1.55rem; }
+    .package-content p { min-height: 76px; margin: 0 0 16px; color: var(--muted); font-size: .92rem; }
+    .package-price { margin-bottom: 17px; color: var(--ink); font-weight: 700; font-size: .9rem; }
+    .package-button { display: block; width: 100%; padding: 12px 14px; text-align: center; text-decoration: none; background: var(--deep); color: white; border: 1px solid var(--deep); border-radius: 3px; font-size: .86rem; font-weight: 700; }
+    .package-button:hover { background: #244744; }
+    .experience { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 55px; }
+    .experience img { width: 100%; min-height: 340px; object-fit: cover; box-shadow: var(--shadow); }
+    .experience p { color: var(--muted); }
+    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+    .feature { padding: 15px; background: rgba(255,255,255,.7); border-left: 2px solid var(--gold); font-weight: 600; font-size: .9rem; }
+    .contact-band { background: var(--deep); color: white; text-align: center; padding: 70px 24px; }
+    .contact-band p { color: rgba(255,255,255,.75); max-width: 600px; margin: 0 auto 24px; }
+    footer { background: #0b2020; color: rgba(255,255,255,.72); padding: 28px 24px; text-align: center; font-size: .82rem; }
+    footer strong { color: white; font-family: "Playfair Display", serif; font-size: 1.05rem; }
+    @media (max-width: 850px) {
+      .package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .experience { gap: 30px; }
+      nav { gap: 16px; }
+    }
+    @media (max-width: 640px) {
+      .nav-wrap { padding: 13px 18px; }
+      .menu-toggle { display: block; }
+      nav { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 22px 22px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 18px; }
+      nav.open { display: flex; }
+      nav a { padding: 4px 0; }
+      .nav-cta { text-align: center; }
+      .hero { min-height: 530px; }
+      .hero-inner { padding: 76px 22px; }
+      .section { padding: 64px 18px; }
+      .package-grid { grid-template-columns: 1fr; gap: 20px; }
+      .package-card img { height: 230px; }
+      .package-content p { min-height: 0; }
+      .experience { grid-template-columns: 1fr; }
+      .experience img { min-height: 250px; order: -1; }
+      .feature-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Thoughtful escapes · Beautiful places · Memorable journeys</div>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Eussie G home">
+        <span class="brand-mark">EG</span>
+        <span><span class="brand-name">Eussie G</span><span class="brand-tag">Travel your way</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav id="siteNav">
+        <a href="#home">Home</a>
+        <a href="#packages">Holiday packages</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%27d%20like%20to%20plan%20a%20holiday.">Plan your trip ↗</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="package-grid">
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <span class="eyebrow">Your next chapter starts here</span>
+        <h1>Find your kind of extraordinary.</h1>
+        <p>From sunlit coastal escapes to unforgettable safari landscapes, discover a holiday that feels just right for you.</p>
+        <a class="button" href="#packages">Explore our holidays ↘</a>
+      </div>
+    </section>
 
-      <!-- DIANI BUDGET -->
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900"
-        alt="Tropical beach">
-        <div class="package-content">
-          <small class="package-label">DIANI · BUDGET ESCAPE</small>
-          <h3>Diani Beach Getaway</h3>
-          <p>4 nights / 5 days. Enjoy beautiful beaches,
-          relaxation and coastal experiences.</p>
-          <div class="package-price">Price on request</div>
-          <a class="package-button"
-          href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Diani%20Budget%20Holiday.">
-          Enquire on WhatsApp ↗</a>
+    <section class="section" id="packages">
+      <div class="container">
+        <div class="intro">
+          <span class="eyebrow">Travel your way</span>
+          <h2>Discover Your Eussie G Holiday</h2>
+          <p>From affordable escapes to luxurious experiences, discover a holiday that suits your dreams and budget.</p>
         </div>
-      </article>
-
-      <!-- DIANI LUXURY -->
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900"
-        alt="Luxury resort">
-        <div class="package-content">
-          <small class="package-label">DIANI · LUXURY ESCAPE</small>
-          <h3>Diani Luxury Retreat</h3>
-          <p>4 nights / 5 days. Discover premium comfort,
-          beautiful surroundings and personalised experiences.</p>
-          <div class="package-price">Price on request</div>
-          <a class="package-button"
-          href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Diani%20Luxury%20Holiday.">
-          Enquire on WhatsApp ↗</a>
+        <div class="package-grid">
+          <article class="package-card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900" alt="Sunny tropical beach and turquoise sea" loading="lazy">
+            <div class="package-content"><span class="package-label">Diani · Budget escape</span><h3>Diani Beach Getaway</h3><p>4 nights / 5 days. Enjoy beautiful beaches, relaxation and coastal experiences.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Diani%20Budget%20Holiday.">Enquire on WhatsApp ↗</a></div>
+          </article>
+          <article class="package-card">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900" alt="Luxury resort with swimming pool" loading="lazy">
+            <div class="package-content"><span class="package-label">Diani · Luxury escape</span><h3>Diani Luxury Retreat</h3><p>4 nights / 5 days. Discover premium comfort, beautiful surroundings and personalised experiences.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Diani%20Luxury%20Holiday.">Enquire on WhatsApp ↗</a></div>
+          </article>
+          <article class="package-card">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900" alt="African safari wildlife and landscape" loading="lazy">
+            <div class="package-content"><span class="package-label">Maasai Mara · Budget</span><h3>Mara Safari Escape</h3><p>3 nights / 4 days. Experience wildlife, beautiful landscapes and safari adventures.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Mara%20Budget%20Safari.">Enquire on WhatsApp ↗</a></div>
+          </article>
+          <article class="package-card">
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=900" alt="Lush green forest landscape" loading="lazy">
+            <div class="package-content"><span class="package-label">Maasai Mara · Luxury</span><h3>Mara Luxury Safari</h3><p>3 nights / 4 days. Explore premium safari accommodation and exclusive experiences.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Mara%20Luxury%20Safari.">Enquire on WhatsApp ↗</a></div>
+          </article>
+          <article class="package-card">
+            <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=900" alt="Open African savannah landscape" loading="lazy">
+            <div class="package-content"><span class="package-label">Amboseli · Budget</span><h3>Amboseli Adventure</h3><p>3 nights / 4 days. Enjoy wildlife, spectacular scenery and memorable adventures.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Amboseli%20Budget%20Holiday.">Enquire on WhatsApp ↗</a></div>
+          </article>
+          <article class="package-card">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900" alt="Beautiful African nature and wildlife" loading="lazy">
+            <div class="package-content"><span class="package-label">Amboseli · Luxury</span><h3>Amboseli Luxury Escape</h3><p>3 nights / 4 days. Experience elevated comfort, safari adventures and relaxation.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Amboseli%20Luxury%20Holiday.">Enquire on WhatsApp ↗</a></div>
+          </article>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- MARA BUDGET -->
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900"
-        alt="African safari">
-        <div class="package-content">
-          <small class="package-label">MAASAI MARA · BUDGET</small>
-          <h3>Mara Safari Escape</h3>
-          <p>3 nights / 4 days. Experience wildlife,
-          beautiful landscapes and safari adventures.</p>
-          <div class="package-price">Price on request</div>
-          <a class="package-button"
-          href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Mara%20Budget%20Safari.">
-          Enquire on WhatsApp ↗</a>
+    <section class="section soft" id="about">
+      <div class="container experience">
+        <div>
+          <span class="eyebrow">The Eussie G experience</span>
+          <h2>Make room for moments that stay with you.</h2>
+          <p>Whether you are dreaming of ocean views or wide-open safari country, explore a choice of escapes and get in touch to discuss the details of your trip.</p>
+          <div class="feature-list">
+            <div class="feature">Coastal getaways</div>
+            <div class="feature">Safari escapes</div>
+            <div class="feature">Budget-friendly options</div>
+            <div class="feature">Luxury experiences</div>
+          </div>
         </div>
-      </article>
+        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1100" alt="Inviting tropical resort swimming pool" loading="lazy">
+      </div>
+    </section>
 
-      <!-- MARA LUXURY -->
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=900"
-        alt="Nature and luxury travel">
-        <div class="package-content">
-          <small class="package-label">MAASAI MARA · LUXURY</small>
-          <h3>Mara Luxury Safari</h3>
-          <p>3 nights / 4 days. Explore premium safari
-          accommodation and exclusive experiences.</p>
-          <div class="package-price">Price on request</div>
-          <a class="package-button"
-          href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Mara%20Luxury%20Safari.">
-          Enquire on WhatsApp ↗</a>
-        </div>
-      </article>
+    <section class="contact-band" id="contact">
+      <span class="eyebrow">Let's plan something beautiful</span>
+      <h2>Where would you love to go?</h2>
+      <p>Tell us what kind of escape you have in mind. Get in touch to ask about package details and availability.</p>
+      <a class="button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%27d%20like%20to%20enquire%20about%20a%20holiday.">Chat with Eussie G on WhatsApp ↗</a>
+    </section>
+  </main>
 
-      <!-- AMBOSELI BUDGET -->
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=900"
-        alt="African wildlife">
-        <div class="package-content">
-          <small class="package-label">AMBOSELI · BUDGET</small>
-          <h3>Amboseli Adventure</h3>
-          <p>3 nights / 4 days. Enjoy wildlife,
-          spectacular scenery and memorable adventures.</p>
-          <div class="package-price">Price on request</div>
-          <a class="package-button"
-          href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Amboseli%20Budget%20Holiday.">
-          Enquire on WhatsApp ↗</a>
-        </div>
-      </article>
-
-      <!-- AMBOSELI LUXURY -->
-      <article class="package-card">
-        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900"
-        alt="Luxury African nature experience">
-        <div class="package-content">
-          <small class="package-label">AMBOSELI · LUXURY</small>
-          <h3>Amboseli Luxury Escape</h3>
-          <p>3 nights / 4 days. Experience elevated
-          comfort, safari adventures and relaxation.</p>
-          <div class="package-price">Price on request</div>
-          <a class="package-button"
-          href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Amboseli%20Luxury%20Holiday.">
-          Enquire on WhatsApp ↗</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
+  <footer><strong>Eussie G</strong><br>Travel your way.<br><span>© <span id="year"></span> Eussie G. All rights reserved.</span></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+    siteNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
