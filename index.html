@@ -17,6 +17,25 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
 .connect{background:linear-gradient(135deg,#102746,#071426)}.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.socials a{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:10px 18px;transition:.2s}.socials a:hover{border-color:var(--gold);color:var(--goldlight);transform:translateY(-2px)}.contact-note{margin-top:20px;max-width:720px;color:#aebbd0;font-size:.9rem}footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.footer-brand{color:var(--goldlight);font-weight:800;letter-spacing:.1em}:focus-visible{outline:2px solid var(--goldlight);outline-offset:4px}
 @media(max-width:760px){nav{min-height:70px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;top:70px;left:4%;right:4%;padding:18px;border:1px solid var(--line);border-radius:15px;background:#0b1d33;flex-direction:column;align-items:stretch;gap:16px}.nav-links.open{display:flex}.nav-cta{text-align:center}.hero{padding:76px 0 68px}.hero:after{right:-100px;opacity:.055}section{padding:65px 0}.grid{grid-template-columns:1fr}.card{min-height:190px}.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px}.gallery-card:first-child{grid-row:span 1;grid-column:span 2}.gallery-caption{left:13px;right:13px;bottom:11px}.gallery-caption h3{font-size:1rem}.about-layout{grid-template-columns:1fr;gap:28px}.hero-foot{margin-top:38px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Eussie G travel experiences */
+.travel-experiences{background:#071426}
+.travel-intro{max-width:760px}
+.destination-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.destination{overflow:hidden;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:#102746}
+.destination img{width:100%;height:190px;object-fit:cover}
+.destination-copy{padding:20px}
+.destination-copy small{color:#f0d99e;text-transform:uppercase;letter-spacing:.15em;font-size:.68rem;font-weight:800}
+.destination-copy h3{margin:7px 0;font-size:1.25rem}
+.destination-copy p{margin:0;color:#c8d1df;font-size:.92rem}
+.travel-next{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.travel-panel{padding:25px;border:1px solid rgba(216,182,106,.45);border-radius:18px;background:linear-gradient(135deg,#142e4d,#0c1d33)}
+.travel-panel h3{margin:8px 0;font-size:1.35rem}
+.travel-panel p{margin:0;color:#c8d1df}
+.travel-panel .panel-tag{color:#f0d99e;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+.coming-soon{display:inline-block;margin-top:16px;padding:7px 12px;border:1px solid rgba(216,182,106,.55);border-radius:999px;color:#f0d99e;font-size:.78rem;font-weight:700}
+@media(max-width:760px){.destination-grid{grid-template-columns:1fr}.destination img{height:205px}.travel-next{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -24,7 +43,7 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
 <header><nav class="wrap" aria-label="Main navigation">
 <a class="brand" href="#home" aria-label="Eussie G home"><img src="eussie-g-watermark.png" alt="Eussie G watermark logo"><span class="brand-name">EUSSIE <span>G</span></span></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-<div class="nav-links" id="nav-links"><a href="#about">About</a><a href="#discover">Discover</a><a href="#gallery">Gallery</a><a href="#connect">Connect</a><a class="nav-cta" href="#discover">Explore the journey</a></div>
+<div class="nav-links" id="nav-links"><a href="#about">About</a><a href="#discover">Discover</a><a href="#gallery">Gallery</a><a href="#experiences">Travel</a><a href="#connect">Connect</a><a class="nav-cta" href="#discover">Explore the journey</a></div>
 </nav></header>
 <main>
 <section class="hero" id="home"><div class="wrap"><div class="hero-inner"><div class="eyebrow">A little inspiration for the journey</div><h1>Live with purpose.<br><span>Explore with wonder.</span></h1><p class="hero-copy">Welcome to Eussie G — a space for travel, faith, inspiration, lifestyle and real-life experiences. Discover stories that encourage you to grow, appreciate life and see the world with fresh eyes.</p><div class="actions"><a class="btn btn-primary" href="#discover">Explore Eussie G</a><a class="btn btn-outline" href="https://www.youtube.com/@eussiengugi" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div><div class="hero-foot">G for Life · Grace · Growth · Gratitude</div></div></div></section>
@@ -41,6 +60,36 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
 <article class="gallery-card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Mountain beneath a starry night sky" loading="lazy"><div class="gallery-caption"><small>Unforgettable views</small><h3>Moments to remember</h3></div></article>
 <article class="gallery-card"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Scenic travel landscape" loading="lazy"><div class="gallery-caption"><small>Go explore</small><h3>Take the scenic route</h3></div></article>
 </div><p class="gallery-note">These are illustrative featured photographs, not personal travel claims. Your own Eussie G travel photos can be added whenever you're ready.</p></div></section>
+
+<section class="travel-experiences" id="experiences">
+  <div class="wrap">
+    <div class="section-head travel-intro">
+      <div class="eyebrow">Your next journey starts here</div>
+      <h2>Explore with Eussie G</h2>
+      <div class="gold-rule"></div>
+      <p class="intro">From Kenya's coast and wild landscapes to memorable journeys farther afield, discover travel inspiration today — with holiday experiences and booking enquiries planned for the future.</p>
+    </div>
+    <div class="destination-grid">
+      <article class="destination">
+        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Turquoise sea and tropical beach" loading="lazy">
+        <div class="destination-copy"><small>Kenya · Coast</small><h3>Diani &amp; the South Coast</h3><p>Beach escapes, ocean views and time to unwind along Kenya's coast.</p></div>
+      </article>
+      <article class="destination">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="African safari landscape" loading="lazy">
+        <div class="destination-copy"><small>Kenya · Wildlife</small><h3>Maasai Mara</h3><p>Discover wide-open savannahs, wildlife and the spirit of safari.</p></div>
+      </article>
+      <article class="destination">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Scenic mountain travel landscape" loading="lazy">
+        <div class="destination-copy"><small>Beyond Kenya</small><h3>Global discoveries</h3><p>Find ideas for future adventures, new cultures and remarkable places.</p></div>
+      </article>
+    </div>
+    <div class="travel-next">
+      <article class="travel-panel"><div class="panel-tag">Coming in a future phase</div><h3>Holiday tours &amp; bookings</h3><p>We’re planning a way for visitors to enquire about holiday packages and travel arrangements. Booking details will be added when the service is ready.</p><span class="coming-soon">Bookings launching soon</span></article>
+      <article class="travel-panel"><div class="panel-tag">Read · Watch · Get inspired</div><h3>Travel stories &amp; guides</h3><p>Follow destination stories, practical inspiration and real experiences from the Eussie G journey.</p><a class="btn btn-outline" href="#gallery" style="margin-top:16px">Browse travel inspiration</a></article>
+    </div>
+  </div>
+</section>
+
 <section class="about" id="about"><div class="wrap about-layout"><div><div class="eyebrow">The meaning behind the name</div><h2>G for Life</h2><div class="gold-rule"></div><p class="intro">God’s Glory · Grace · Global · Gratitude · Growth</p><p class="about-copy">Eussie G brings together a positive outlook on life: celebrating God’s grace, appreciating every journey, learning from real experiences and inspiring people across borders. Thank you for being part of the journey.</p></div><div class="values" aria-label="Eussie G values"><div class="value"><strong>01</strong><span>God’s Glory</span></div><div class="value"><strong>02</strong><span>Grace</span></div><div class="value"><strong>03</strong><span>Global</span></div><div class="value"><strong>04</strong><span>Gratitude</span></div><div class="value"><strong>05</strong><span>Growth</span></div><div class="value"><strong>06</strong><span>Good living</span></div></div></div></section>
 <section class="connect" id="connect"><div class="wrap"><div class="eyebrow">Stay connected</div><h2>Follow the Eussie G journey</h2><div class="gold-rule"></div><p class="intro">Find videos, updates and new stories on the platforms below. Come along, share the journey and be inspired.</p><div class="socials"><a href="https://www.youtube.com/@eussiengugi" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://www.tiktok.com/@eussieg" target="_blank" rel="noopener noreferrer">TikTok ↗</a></div><p class="contact-note">Instagram, Facebook, email and WhatsApp links can be added when the official details are ready.</p></div></section>
 </main>
