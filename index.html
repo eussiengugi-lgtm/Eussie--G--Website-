@@ -55,6 +55,24 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
 .enquiry-disclaimer{font-size:.82rem;color:#647184;margin-top:14px}
 @media(max-width:760px){.enquiry-layout{grid-template-columns:1fr}.enquiry-form{padding:19px}}
 
+
+/* Eussie G holiday package collections */
+.package-section{background:#0a1b30}
+.package-intro{max-width:780px}
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.package-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:linear-gradient(160deg,#142e4d,#0c1d33)}
+.package-card img{width:100%;height:180px;object-fit:cover}
+.package-card-body{display:flex;flex:1;flex-direction:column;padding:21px}
+.package-card .package-tag{color:#f0d99e;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;font-weight:800}
+.package-card h3{margin:8px 0;font-size:1.35rem}
+.package-card p{margin:0;color:#c8d1df;font-size:.92rem}
+.package-list{margin:15px 0 20px;padding-left:19px;color:#dce3ed;font-size:.9rem}
+.package-list li{margin:5px 0}
+.package-card .btn{align-self:flex-start;margin-top:auto}
+.package-note{margin:24px 0 0;color:#c8d1df;font-size:.85rem}
+@media(max-width:900px){.package-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.package-grid{grid-template-columns:1fr}.package-card img{height:205px}}
+
 </style>
 </head>
 <body>
@@ -109,6 +127,66 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
   </div>
 </section>
 
+
+<section class="package-section" id="holiday-packages">
+  <div class="wrap">
+    <div class="section-head package-intro">
+      <div class="eyebrow">Discover · Plan · Explore</div>
+      <h2>Holiday ideas with Eussie G</h2>
+      <div class="gold-rule"></div>
+      <p class="intro">Explore three ways to start planning your next trip. These are destination ideas, not fixed or confirmed packages. Tell us what interests you and we can discuss dates, availability and a tailored quotation.</p>
+    </div>
+    <div class="package-grid">
+      <article class="package-card">
+        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Sunny tropical beach on the Kenyan coast" loading="lazy">
+        <div class="package-card-body">
+          <div class="package-tag">01 · Kenya</div>
+          <h3>Kenya Getaways</h3>
+          <p>Coastal breaks, wildlife experiences and scenic escapes closer to home.</p>
+          <ul class="package-list">
+            <li>Diani &amp; the South Coast</li>
+            <li>Mombasa and Watamu</li>
+            <li>Maasai Mara safari ideas</li>
+            <li>Amboseli and Nairobi escapes</li>
+          </ul>
+          <a class="btn btn-primary package-enquire" href="#enquire" data-destination="Diani &amp; the South Coast">Enquire about Kenya ↗</a>
+        </div>
+      </article>
+      <article class="package-card">
+        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Clear blue ocean and island coastline" loading="lazy">
+        <div class="package-card-body">
+          <div class="package-tag">02 · Africa</div>
+          <h3>African Adventures</h3>
+          <p>Discover island time, nature, culture and memorable journeys around Africa.</p>
+          <ul class="package-list">
+            <li>Zanzibar island escapes</li>
+            <li>Tanzania and safari ideas</li>
+            <li>Uganda nature experiences</li>
+            <li>Other African destinations on request</li>
+          </ul>
+          <a class="btn btn-primary package-enquire" href="#enquire" data-destination="Zanzibar / Tanzania / other Africa">Enquire about Africa ↗</a>
+        </div>
+      </article>
+      <article class="package-card">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Travel suitcase ready for an international journey" loading="lazy">
+        <div class="package-card-body">
+          <div class="package-tag">03 · Worldwide</div>
+          <h3>International Holidays</h3>
+          <p>Share the places on your wish list and start exploring possible options.</p>
+          <ul class="package-list">
+            <li>City breaks and cultural trips</li>
+            <li>Family and group holidays</li>
+            <li>Relaxing beach destinations</li>
+            <li>Custom travel ideas worldwide</li>
+          </ul>
+          <a class="btn btn-primary package-enquire" href="#enquire" data-destination="International destination">Enquire about international travel ↗</a>
+        </div>
+      </article>
+    </div>
+    <p class="package-note">Prices, inclusions, transport, accommodation and availability are confirmed individually after an enquiry. No package is booked or guaranteed by submitting this form.</p>
+  </div>
+</section>
+
 <section class="about" id="about"><div class="wrap about-layout"><div><div class="eyebrow">The meaning behind the name</div><h2>G for Life</h2><div class="gold-rule"></div><p class="intro">God’s Glory · Grace · Global · Gratitude · Growth</p><p class="about-copy">Eussie G brings together a positive outlook on life: celebrating God’s grace, appreciating every journey, learning from real experiences and inspiring people across borders. Thank you for being part of the journey.</p></div><div class="values" aria-label="Eussie G values"><div class="value"><strong>01</strong><span>God’s Glory</span></div><div class="value"><strong>02</strong><span>Grace</span></div><div class="value"><strong>03</strong><span>Global</span></div><div class="value"><strong>04</strong><span>Gratitude</span></div><div class="value"><strong>05</strong><span>Growth</span></div><div class="value"><strong>06</strong><span>Good living</span></div></div></div></section>
 
 <section class="enquiry-section" id="enquire">
@@ -128,6 +206,8 @@ section{padding:86px 0}.section-head{max-width:720px}h2{margin:12px 0 10px;font-
           <option value="">Choose a destination</option>
           <option>Diani &amp; the South Coast</option>
           <option>Mombasa</option>
+          <option>Watamu</option>
+          <option>Zanzibar / Tanzania / other Africa</option>
           <option>Maasai Mara</option>
           <option>Nairobi &amp; nearby experiences</option>
           <option>International destination</option>
@@ -170,6 +250,19 @@ navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
 document.getElementById('year').textContent=new Date().getFullYear();
 
 const enquiryForm=document.getElementById('holiday-enquiry');
+
+const destinationSelect=document.getElementById('enq-destination');
+document.querySelectorAll('.package-enquire').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const requested=link.dataset.destination;
+    if(requested && destinationSelect){
+      const matching=[...destinationSelect.options].find(option=>option.text===requested);
+      if(matching) destinationSelect.value=matching.value;
+      else destinationSelect.value='International destination';
+    }
+  });
+});
+
 function getEnquiryMessage(){
   const data=new FormData(enquiryForm);
   const name=(data.get('name')||'').trim();
