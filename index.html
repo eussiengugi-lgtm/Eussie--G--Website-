@@ -51,9 +51,11 @@
     h2 { margin: 12px 0 14px; font-size: clamp(2rem, 4vw, 3.2rem); }
     .intro p { color: var(--muted); margin: 0 auto; max-width: 650px; }
     .package-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; }
-    .package-card { overflow: hidden; background: white; border: 1px solid var(--line); box-shadow: 0 8px 28px rgba(20,39,36,.05); transition: transform .25s, box-shadow .25s; }
+    .package-card { overflow: hidden; position: relative; background: white; border: 1px solid var(--line); box-shadow: 0 8px 28px rgba(20,39,36,.05); transition: transform .25s, box-shadow .25s; }
     .package-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-    .package-card img { display: block; width: 100%; height: 235px; object-fit: cover; }
+    .package-photo { position: relative; overflow: hidden; }
+    .package-photo > img:first-child { display: block; width: 100%; height: 235px; object-fit: cover; }
+    .package-photo .watermark { position: absolute; right: 12px; bottom: 12px; width: 70px; height: 70px; object-fit: contain; opacity: .92; filter: drop-shadow(0 2px 5px rgba(0,0,0,.45)); pointer-events: none; }
     .package-content { padding: 23px 23px 25px; }
     .package-label { color: #9b7b48; font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
     .package-content h3 { margin: 10px 0; font-size: 1.55rem; }
@@ -86,7 +88,8 @@
       .hero-inner { padding: 76px 22px; }
       .section { padding: 64px 18px; }
       .package-grid { grid-template-columns: 1fr; gap: 20px; }
-      .package-card img { height: 230px; }
+      .package-photo > img:first-child { height: 230px; }
+      .package-photo .watermark { width: 60px; height: 60px; right: 10px; bottom: 10px; }
       .package-content p { min-height: 0; }
       .experience { grid-template-columns: 1fr; }
       .experience img { min-height: 250px; order: -1; }
@@ -132,27 +135,45 @@
         </div>
         <div class="package-grid">
           <article class="package-card">
+            <div class="package-photo">
             <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900" alt="Sunny tropical beach and turquoise sea" loading="lazy">
+            <img class="watermark" src="eussie-g-watermark.png" alt="Eussie G G for Life watermark" loading="lazy">
+          </div>
             <div class="package-content"><span class="package-label">Diani · Budget escape</span><h3>Diani Beach Getaway</h3><p>4 nights / 5 days. Enjoy beautiful beaches, relaxation and coastal experiences.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Diani%20Budget%20Holiday.">Enquire on WhatsApp ↗</a></div>
           </article>
           <article class="package-card">
+            <div class="package-photo">
             <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900" alt="Luxury resort with swimming pool" loading="lazy">
+            <img class="watermark" src="eussie-g-watermark.png" alt="Eussie G G for Life watermark" loading="lazy">
+          </div>
             <div class="package-content"><span class="package-label">Diani · Luxury escape</span><h3>Diani Luxury Retreat</h3><p>4 nights / 5 days. Discover premium comfort, beautiful surroundings and personalised experiences.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Diani%20Luxury%20Holiday.">Enquire on WhatsApp ↗</a></div>
           </article>
           <article class="package-card">
+            <div class="package-photo">
             <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900" alt="African safari wildlife and landscape" loading="lazy">
+            <img class="watermark" src="eussie-g-watermark.png" alt="Eussie G G for Life watermark" loading="lazy">
+          </div>
             <div class="package-content"><span class="package-label">Maasai Mara · Budget</span><h3>Mara Safari Escape</h3><p>3 nights / 4 days. Experience wildlife, beautiful landscapes and safari adventures.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Mara%20Budget%20Safari.">Enquire on WhatsApp ↗</a></div>
           </article>
           <article class="package-card">
+            <div class="package-photo">
             <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=900" alt="Lush green forest landscape" loading="lazy">
+            <img class="watermark" src="eussie-g-watermark.png" alt="Eussie G G for Life watermark" loading="lazy">
+          </div>
             <div class="package-content"><span class="package-label">Maasai Mara · Luxury</span><h3>Mara Luxury Safari</h3><p>3 nights / 4 days. Explore premium safari accommodation and exclusive experiences.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Mara%20Luxury%20Safari.">Enquire on WhatsApp ↗</a></div>
           </article>
           <article class="package-card">
+            <div class="package-photo">
             <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=900" alt="Open African savannah landscape" loading="lazy">
+            <img class="watermark" src="eussie-g-watermark.png" alt="Eussie G G for Life watermark" loading="lazy">
+          </div>
             <div class="package-content"><span class="package-label">Amboseli · Budget</span><h3>Amboseli Adventure</h3><p>3 nights / 4 days. Enjoy wildlife, spectacular scenery and memorable adventures.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Amboseli%20Budget%20Holiday.">Enquire on WhatsApp ↗</a></div>
           </article>
           <article class="package-card">
+            <div class="package-photo">
             <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900" alt="Beautiful African nature and wildlife" loading="lazy">
+            <img class="watermark" src="eussie-g-watermark.png" alt="Eussie G G for Life watermark" loading="lazy">
+          </div>
             <div class="package-content"><span class="package-label">Amboseli · Luxury</span><h3>Amboseli Luxury Escape</h3><p>3 nights / 4 days. Experience elevated comfort, safari adventures and relaxation.</p><div class="package-price">Price on request</div><a class="package-button" href="https://wa.me/254720421841?text=Hello%20Eussie%20G%2C%20I%20am%20interested%20in%20the%20Amboseli%20Luxury%20Holiday.">Enquire on WhatsApp ↗</a></div>
           </article>
         </div>
